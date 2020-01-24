@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Jocelyn's Colour Blanket</h1>
+<p><a href="https://darksky.net/poweredby/" target="_blank"><em>Powered By Dark Sky</em></a></p>
+<p>Backstory at <a href="https://blog.iannelson.uk/temperature-blanket/" target="_blank">this blog entry</a></p>
+<h2>Temperatures for Wistow</h2>
+<pre>
+@{
+    var results = (List<string>) ViewData["ColourBlanket"];
+    foreach (var result in results)
+    {
+        @result<br />
+    }
+}
+</pre>
+
+
+
