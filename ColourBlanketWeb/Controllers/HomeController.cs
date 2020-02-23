@@ -20,14 +20,11 @@ namespace ColourBlanketWeb.Controllers
         
         public IActionResult Index()
         {
-            const string cacheKey = "temperatures";
-            if (!_cache.TryGetValue(cacheKey, out List<string> temperatures))
-            {
-                temperatures = GetTemperatures();
-                _cache.Set(cacheKey, temperatures);
-            }
-
-            ViewData["ColourBlanket"] = temperatures;
+            ViewData["ColourBlanket"] = _cache.GetOrCreate("temperatures", entry =>
+                {
+                    entry.SetSlidingExpiration(new TimeSpan(0, 6, 0, 0));
+                    return GetTemperatures();
+                });
             
             return View();
         }
