@@ -7,13 +7,15 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="BlanketService.cs" t="Include" />
         <e p="ColourBlanketWeb.csproj" t="IncludeRecursive" />
-        <e p="colourblanketweb.tar" t="Include" />
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
         </e>
         <e p="Dockerfile" t="Include" />
         <e p="Models" t="Include">
+          <e p="BlanketDay.cs" t="Include" />
+          <e p="BlanketTemperature.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

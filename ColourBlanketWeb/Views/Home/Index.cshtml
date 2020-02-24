@@ -5,15 +5,17 @@
 <p><a href="https://darksky.net/poweredby/" target="_blank"><em>Powered By Dark Sky</em></a></p>
 <p>Backstory at <a href="https://blog.iannelson.uk/temperature-blanket/" target="_blank">this blog entry</a></p>
 <h2>Temperatures for Wistow</h2>
-<pre>
 @{
-    var results = (List<string>) ViewData["ColourBlanket"];
+    var results = (IEnumerable<BlanketDay>) ViewData["ColourBlanket"];
     foreach (var result in results)
     {
-        @result<br />
+        <h3>@result.Date.ToLongDateString()</h3>
+        <p>Minimum: @result.Minimum.Temperature (@result.Minimum.ColourName)</p>
+        <p>Maximum: @result.Maximum.Temperature (@result.Maximum.ColourName)</p>
+        <p>Average: @result.Average.Temperature (@result.Average.ColourName)</p>
+                   
     }
 }
-</pre>
 
 
 

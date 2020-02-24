@@ -26,6 +26,7 @@ namespace ColourBlanketWeb
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<IBlanketService, BlanketService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
